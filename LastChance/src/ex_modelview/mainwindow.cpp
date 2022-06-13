@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     QObject::connect(ui->fareFromSlider, SIGNAL(valueChanged(int)), this, SLOT(updateFromLineEdit(int)));
     QObject::connect(ui->fareToSlider, SIGNAL(valueChanged(int)), this, SLOT(updateFilterMaxFare(int)));
 
-    QObject::connect(ui->nameEdit, SIGNAL(editingFinished()), this, SLOT(setName()));
+    QObject::connect(ui->nameEdit, SIGNAL(textChanged(const QString &)), this, SLOT(setName()));
 
     QObject::connect(ui->tableDetailsView, SIGNAL(clicked(QModelIndex)), this, SLOT(changeActiveRow(QModelIndex)));
 
